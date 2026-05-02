@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --bg-main: #ffffff;
+  /* Change this to transparent */
+  --bg-main: transparent; 
   --text-main: #6b6375;
   --accent-purple: #aa3bff;
 }
 
 body {
   margin: 0;
-  background-color: var(--bg-main);
+  /* Now the gradients and photos will finally show up! */
+  background-color: var(--bg-main); 
   color: var(--text-main);
   font-family: sans-serif;
 }
