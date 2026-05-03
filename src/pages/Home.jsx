@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="relative min-h-screen w-full text-[#f5f5f7] pb-10">
       
-      {/* 物理隔离背景 */}
+      {/* Background Overlay */}
       <div 
         className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
         style={{ 
@@ -16,7 +16,7 @@ const Home = () => {
 
       <main className="max-w-7xl mx-auto pt-48 px-8 flex flex-col">
         
-        {/* 1. Hero Section: 极致居中 + Apple 级微交互 */}
+        {/* 1. Hero Section */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-32 animate-in slide-in-from-bottom-10 duration-1000">
           <h1 className="text-6xl md:text-8xl font-black tracking-tighter leading-[1.05] mb-8 text-white">
             Master your <br />
@@ -36,9 +36,8 @@ const Home = () => {
           </div>
         </div>
 
-        {/* 2. 三大核心卡片 */}
+        {/* 2. Core Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-32">
-          
           {[
             { id: "01", title: "Learning Resources", desc: "Access high-quality lecture notes and video tutorials.", path: "/courses" },
             { id: "02", title: "Smart Bookstore", desc: "Digital and physical textbook procurement.", path: "/bookstore" },
@@ -109,7 +108,7 @@ const Home = () => {
           </div>
         </div>
 
-        {/* 5. 升级版的高级 Footer */}
+        {/* 5. Footer */}
         <footer className="border-t border-white/10 pt-16 pb-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             <div className="col-span-2 md:col-span-1">
@@ -140,7 +139,6 @@ const Home = () => {
             </div>
           </div>
           
-          {/* 修改点：删除了吉隆坡，并将版权文字居中对齐 */}
           <div className="border-t border-white/5 pt-8 flex justify-center items-center">
             <p className="text-[10px] font-bold tracking-[0.2em] text-gray-600 uppercase text-center">
               © 2026 GLOBAL INSTITUTE OF TECHNOLOGY

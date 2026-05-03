@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const Login = () => {
-  // 控制显示 Login 还是 Sign Up
   const [isLogin, setIsLogin] = useState(true);
 
   return (
@@ -15,7 +14,6 @@ const Login = () => {
         </p>
         
         <div className="space-y-4 mb-8">
-          {/* 如果是注册页面，多一个 Name 框 */}
           {!isLogin && (
             <input type="text" placeholder="Full Name" className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 px-8 outline-none focus:border-white transition-all text-white text-sm font-light" />
           )}
@@ -23,7 +21,6 @@ const Login = () => {
           <input type="password" placeholder="Password" className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 px-8 outline-none focus:border-white transition-all text-white text-sm font-light" />
         </div>
 
-        {/* 只有 Login 页面显示 Forgot Password */}
         {isLogin && (
           <div className="flex justify-start mb-10">
             <button className="text-[10px] font-bold text-gray-600 hover:text-white uppercase tracking-widest transition-colors cursor-pointer">
@@ -36,7 +33,6 @@ const Login = () => {
           {isLogin ? 'Sign In' : 'Sign Up'}
         </button>
 
-        {/* 切换按键 */}
         <p className="text-center text-xs text-gray-500 font-light">
           {isLogin ? "Don't have an account? " : "Already have an account? "}
           <button 

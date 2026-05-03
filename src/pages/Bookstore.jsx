@@ -19,7 +19,7 @@ const Bookstore = () => {
           </div>
         </div>
 
-        {/* 搜索与分类 (Requirement 5) */}
+        {/* Search and Categories */}
         <div className="flex flex-col md:flex-row items-center gap-6 mb-12 border-b border-white/10 pb-8">
           <div className="relative flex items-center bg-white/5 border border-white/10 rounded-2xl px-5 py-3 w-full md:w-96 focus-within:border-white/30 transition-all">
             <Search size={16} className="text-gray-500 mr-3" />
@@ -42,7 +42,7 @@ const Bookstore = () => {
           </div>
         </div>
 
-        {/* 书籍列表 */}
+        {/* Book Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {books.map((book) => (
             <div 

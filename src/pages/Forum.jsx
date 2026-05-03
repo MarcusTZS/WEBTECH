@@ -23,7 +23,7 @@ const Forum = () => {
           </button>
         </div>
 
-        {/* 搜索条 */}
+        {/* Search Bar */}
         <div className="relative flex items-center bg-white/5 border border-white/10 rounded-2xl px-6 py-4 mb-10 focus-within:border-white/30 transition-all">
           <Search size={18} className="text-gray-500 mr-4" />
           <input 
@@ -33,18 +33,18 @@ const Forum = () => {
           />
         </div>
 
-        {/* 帖子列表 (加入了 Moderation Tools) */}
+        {/* Discussion List */}
         <div className="space-y-4">
           {posts.map((post, index) => (
             <div key={index} className="p-6 bg-[#0a0a0c] border border-white/10 rounded-3xl hover:bg-[#111115] hover:border-white/20 transition-all duration-300 flex items-start gap-6 cursor-pointer group">
               
-              {/* 点赞 */}
+              {/* Upvotes */}
               <div className="flex flex-col items-center justify-center min-w-[50px] p-3 bg-white/5 rounded-xl group-hover:bg-white/10 transition-colors">
                 <ChevronUp size={18} className="text-gray-400 group-hover:text-white mb-1" />
                 <span className="text-sm font-semibold">{post.votes}</span>
               </div>
 
-              {/* 内容 */}
+              {/* Content */}
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2">
                   <span className="px-3 py-1 bg-white/10 text-gray-300 text-[10px] uppercase tracking-widest font-bold rounded-full">
@@ -55,7 +55,7 @@ const Forum = () => {
                 <h3 className="text-lg font-semibold text-white mb-1">{post.title}</h3>
               </div>
 
-              {/* Requirement 4: Moderation Tools (只有悬浮时才出现，保持极简) */}
+              {/* Moderation Tools */}
               <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-4">
                 <button className="flex items-center gap-1.5 text-gray-500 hover:text-white text-[10px] uppercase tracking-widest font-bold transition-colors">
                   <Flag size={12} /> Report
@@ -65,7 +65,7 @@ const Forum = () => {
                 </button>
               </div>
 
-              {/* 回复数 */}
+              {/* Replies */}
               <div className="flex items-center gap-2 text-gray-500">
                 <MessageSquare size={16} />
                 <span className="text-sm font-medium">{post.replies}</span>

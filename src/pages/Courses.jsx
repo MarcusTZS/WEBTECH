@@ -28,14 +28,12 @@ const Courses = () => {
               <h2 className="text-xl font-semibold mb-1 text-white">{course.title}</h2>
               <p className="text-[10px] text-gray-500 uppercase tracking-widest font-medium mb-6">{course.subtitle}</p>
               
-              {/* Requirement 2: 明确展示视频、笔记和测验 */}
               <div className="flex items-center gap-4 mb-8 text-xs text-gray-400 font-medium">
                 <span className="flex items-center gap-1.5"><PlayCircle size={14} /> {course.videos} Videos</span>
                 <span className="flex items-center gap-1.5"><FileText size={14} /> {course.notes} Notes</span>
                 <span className="flex items-center gap-1.5"><CheckSquare size={14} /> {course.quizzes} Quizzes</span>
               </div>
               
-              {/* Apple 风格按键 */}
               <button className="w-full py-3.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-gray-200 transition-all active:scale-95 mt-auto">
                 Enter Course
               </button>

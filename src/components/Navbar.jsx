@@ -4,7 +4,7 @@ import { ShoppingBag, X, Search, Menu } from 'lucide-react';
 
 const Navbar = () => {
   const [isBagOpen, setIsBagOpen] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // 控制手机菜单
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
 
   return (
     <>
@@ -15,7 +15,7 @@ const Navbar = () => {
             EDU<span className="text-gray-500 italic">TECH</span>
           </Link>
           
-          {/* 桌面端导航 */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-10">
             <Link to="/" className="text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">HOME</Link>
             <Link to="/courses" className="text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors">COURSES</Link>
@@ -43,7 +43,7 @@ const Navbar = () => {
               Login
             </Link>
 
-            {/* 手机端汉堡菜单按钮 */}
+            {/* Mobile Menu Toggle */}
             <button 
               className="md:hidden text-gray-400 hover:text-white p-2"
               onClick={() => setIsMobileMenuOpen(true)}
@@ -54,7 +54,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* 手机端全屏菜单 (Requirement 1: Responsive) */}
+      {/* Mobile Fullscreen Menu */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-[200] bg-[#0a0a0c] flex flex-col items-center justify-center animate-in fade-in duration-200">
           <button 
@@ -74,7 +74,7 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* 购物车侧边栏 */}
+      {/* Shopping Bag Sidebar */}
       {isBagOpen && (
         <div className="fixed inset-0 z-[200] flex justify-end">
           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setIsBagOpen(false)} />

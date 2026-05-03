@@ -6,7 +6,7 @@ const Portal = () => {
     <div className="min-h-screen bg-[#000000] text-white pt-32 px-8 pb-20">
       <div className="max-w-7xl mx-auto">
         
-        {/* 标题 */}
+        {/* Page Title */}
         <h1 className="text-3xl font-semibold tracking-tight text-white mb-12">
           Student Portal
         </h1>
@@ -43,7 +43,7 @@ const Portal = () => {
             </div>
           </div>
 
-          {/* 3. 全新模块：Recent Assessments (成绩与评估追踪 - 完美契合 Req 3) */}
+          {/* 3. Recent Assessments */}
           <div className="md:col-span-2 p-10 bg-[#0a0a0c] border border-white/10 rounded-[2rem] hover:bg-[#111115] hover:border-white/20 transition-all duration-300 flex flex-col justify-between">
             <div>
               <h2 className="text-xl font-semibold mb-2 flex items-center gap-3 text-white">
@@ -53,7 +53,6 @@ const Portal = () => {
               <p className="text-sm text-gray-500 font-light mb-8">Track your latest quiz scores and assignment grades.</p>
 
               <div className="space-y-4">
-                {/* 成绩卡片 1 - 优秀 */}
                 <div className="flex items-center justify-between p-5 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 transition-all">
                   <div className="flex items-center gap-5">
                     <div className="w-14 h-14 bg-white/10 rounded-xl flex flex-col items-center justify-center text-white border border-white/10">
@@ -70,7 +69,6 @@ const Portal = () => {
                   </div>
                 </div>
 
-                {/* 成绩卡片 2 - 良好 */}
                 <div className="flex items-center justify-between p-5 bg-white/5 border border-white/5 rounded-2xl hover:bg-white/10 transition-all">
                   <div className="flex items-center gap-5">
                     <div className="w-14 h-14 bg-transparent rounded-xl flex flex-col items-center justify-center text-gray-300 border border-white/10">
@@ -90,7 +88,7 @@ const Portal = () => {
             </div>
           </div>
 
-          {/* 4. Upcoming Deadlines (死线倒计时，纯极简风) */}
+          {/* 4. Upcoming Deadlines */}
           <div className="p-10 bg-[#0a0a0c] border border-white/10 rounded-[2rem] hover:bg-[#111115] hover:border-white/20 transition-all duration-300">
             <h2 className="text-xl font-semibold mb-8 flex items-center gap-3 text-white">
               <Clock size={20} className="text-gray-400"/>
@@ -98,21 +96,18 @@ const Portal = () => {
             </h2>
             
             <div className="space-y-6">
-              {/* 紧急死线 */}
               <div className="relative pl-6 border-l-2 border-white">
                 <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-white shadow-[0_0_10px_#ffffff]"></div>
                 <h4 className="text-sm font-semibold text-white mb-1">Web Tech Project Phase 1</h4>
                 <p className="text-xs text-gray-300 font-medium">Due Today, 11:59 PM</p>
               </div>
               
-              {/* 普通死线 */}
               <div className="relative pl-6 border-l-2 border-white/10">
                 <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-gray-500"></div>
                 <h4 className="text-sm font-semibold text-gray-400 mb-1">Data Structures Quiz</h4>
                 <p className="text-xs text-gray-500">Tomorrow, 10:00 AM</p>
               </div>
 
-              {/* 稍远死线 */}
               <div className="relative pl-6 border-l-2 border-white/10">
                 <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-gray-500"></div>
                 <h4 className="text-sm font-semibold text-gray-400 mb-1">Software Engineering Report</h4>
