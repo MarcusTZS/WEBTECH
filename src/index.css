@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
-:root {
-  /* Change this to transparent */
-  --bg-main: transparent; 
-  --text-main: #6b6375;
-  --accent-purple: #aa3bff;
+@layer base {
+  body {
+    background-color: #000; /* Apple 风格通常从纯黑起步 */
+    color: #f5f5f7; /* Apple 标准浅灰色文字 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
 }
 
-body {
-  margin: 0;
-  /* Now the gradients and photos will finally show up! */
-  background-color: var(--bg-main); 
-  color: var(--text-main);
-  font-family: sans-serif;
-}
+/* 极简滚动条 */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }

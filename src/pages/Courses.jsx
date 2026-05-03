@@ -1,55 +1,46 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { PlayCircle, FileText, CheckSquare } from 'lucide-react';
 
 const Courses = () => {
-  const [filter, setFilter] = useState('All');
-
-  const courseData = [
-    { id: 1, title: 'Introduction to React', module: 'Web Development', type: 'Lecture Notes', status: 'Available' },
-    { id: 2, title: 'Database Systems (MySQL)', module: 'Data Science', type: 'Video Tutorial', status: 'Available' },
-    { id: 3, title: 'Network Security Fundamentals', module: 'Cybersecurity', type: 'Interactive Quiz', status: 'Coming Soon' },
-    { id: 4, title: 'Advanced PHP Patterns', module: 'Web Development', type: 'Lecture Notes', status: 'Available' },
+  const courseList = [
+    { title: "Web Technology", subtitle: "Bachelor of Computer Science (Hons)", videos: 12, notes: 5, quizzes: 2 },
+    { title: "Data Structures", subtitle: "Bachelor of Computer Science (Hons)", videos: 8, notes: 10, quizzes: 4 },
+    { title: "Database Systems", subtitle: "Bachelor of Computer Science (Hons)", videos: 15, notes: 6, quizzes: 3 },
+    { title: "Mobile Computing", subtitle: "Bachelor of Computer Science (Hons)", videos: 10, notes: 8, quizzes: 2 }
   ];
 
-  const categories = ['All', 'Web Development', 'Data Science', 'Cybersecurity'];
-
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-6">
+    <div className="min-h-screen bg-[#000000] text-white pt-32 px-8 pb-20">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-black text-gray-900 mb-8">Course Resources</h1>
+        <h1 className="text-3xl font-semibold tracking-tight text-white mb-12">
+          My Courses
+        </h1>
 
-        {/* Category Filter */}
-        <div className="flex space-x-4 mb-10 overflow-x-auto pb-2">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-6 py-2 rounded-full font-bold transition ${
-                filter === cat ? 'bg-purple-600 text-white shadow-lg' : 'bg-white text-gray-600 hover:bg-purple-50'
-              }`}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {courseList.map((course, index) => (
+            <div 
+              key={index} 
+              className="p-6 bg-[#0a0a0c] border border-white/10 rounded-[2rem] hover:bg-[#111115] hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:border-white/20 transition-all duration-300 group cursor-pointer flex flex-col"
             >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Course Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courseData
-            .filter((item) => filter === 'All' || item.module === filter)
-            .map((item) => (
-              <div key={item.id} className="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-xl hover:-translate-y-2 transition-all">
-                <span className="text-xs font-black text-purple-600 uppercase tracking-widest">{item.module}</span>
-                <h3 className="text-2xl font-bold mt-2 mb-4 text-gray-900">{item.title}</h3>
-                <div className="flex justify-between items-center mt-6">
-                  <span className="text-sm text-gray-500 font-medium">{item.type}</span>
-                  <button className={`px-4 py-2 rounded-xl text-sm font-bold ${
-                    item.status === 'Available' ? 'bg-green-100 text-green-600' : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  }`}>
-                    {item.status === 'Available' ? 'Download' : 'Locked'}
-                  </button>
-                </div>
+              <div className="w-full aspect-[2/1] bg-white/5 rounded-2xl mb-6 flex items-center justify-center text-[10px] font-bold text-gray-600 tracking-widest group-hover:bg-white/10 transition-colors">
+                PREVIEW
               </div>
-            ))}
+              <h2 className="text-xl font-semibold mb-1 text-white">{course.title}</h2>
+              <p className="text-[10px] text-gray-500 uppercase tracking-widest font-medium mb-6">{course.subtitle}</p>
+              
+              {/* Requirement 2: 明确展示视频、笔记和测验 */}
+              <div className="flex items-center gap-4 mb-8 text-xs text-gray-400 font-medium">
+                <span className="flex items-center gap-1.5"><PlayCircle size={14} /> {course.videos} Videos</span>
+                <span className="flex items-center gap-1.5"><FileText size={14} /> {course.notes} Notes</span>
+                <span className="flex items-center gap-1.5"><CheckSquare size={14} /> {course.quizzes} Quizzes</span>
+              </div>
+              
+              {/* Apple 风格按键 */}
+              <button className="w-full py-3.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-gray-200 transition-all active:scale-95 mt-auto">
+                Enter Course
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>

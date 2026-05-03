@@ -2,14 +2,10 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}", // 检查这一行是否漏掉了！
   ],
   theme: {
-    extend: {
-      colors: {
-        accent: '#aa3bff',
-      }
-    },
+    extend: {},
   },
   plugins: [],
 }

@@ -1,35 +1,32 @@
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar.jsx';
-import Home from './pages/Home.jsx';
-import Portal from './pages/Portal.jsx';
-import Login from './pages/Login.jsx';
-import Courses from './pages/Courses.jsx'; // New Import
-import Bookstore from './pages/Bookstore.jsx'; // New Import
 
-function App() {
+// 确保你的路径是对的（根据你的文件夹结构调整）
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Courses from './pages/Courses';
+import Bookstore from './pages/Bookstore';
+import Portal from './pages/Portal';
+import Login from './pages/Login';
+import Forum from './pages/Forum'; // 新增：引入刚刚写好的 Forum 页面
+
+const App = () => {
   return (
     <Router>
-      {/* Container remains transparent for page-specific backgrounds */}
-      <div className="min-h-screen font-sans">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/portal" element={<Portal />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/bookstore" element={<Bookstore />} />
-          
-          {/* Simple 404 Fallback */}
-          <Route path="*" element={
-            <div className="flex flex-col items-center justify-center min-h-[60vh] text-center">
-              <h1 className="text-4xl font-black text-gray-900 mb-4">404</h1>
-              <p className="text-gray-500">The module you are looking for is currently being updated.</p>
-            </div>
-          } />
-        </Routes>
-      </div>
+      {/* Navbar 放在这里，确保它在每一个页面都会显示 */}
+      <Navbar />
+      
+      {/* Routes 控制页面切换：按了按钮就会跳转到对应的 Element */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/bookstore" element={<Bookstore />} />
+        <Route path="/portal" element={<Portal />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/forum" element={<Forum />} /> {/* 新增：注册 Forum 路由 */}
+      </Routes>
     </Router>
   );
-}
+};
 
 export default App;
